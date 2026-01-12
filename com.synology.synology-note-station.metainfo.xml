@@ -8,8 +8,8 @@
   <url type="homepage">https://www.synology.com</url>
   <summary>Powerful note-taking application for personal and professional use</summary>
   <description>
+    <p>**NOTE: This wrapper is not verified by, affiliated with, or supported by Synology Inc.**</p>
     <p>Synology Note Station is a powerful note-taking application designed for personal and professional use. Organize your thoughts, ideas, and tasks efficiently with Note Station's intuitive interface and collaborative features.</p>
-    <p>NOTE: This wrapper is not verified by, affiliated with, or supported by Synology Inc.</p>
   </description>
   <categories>
     <category>Office</category>
