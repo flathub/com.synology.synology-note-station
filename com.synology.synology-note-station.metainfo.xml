@@ -4,11 +4,14 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LicenseRef-proprietary=https://www.synology.com/en-global/company/legal/terms_EULA</project_license>
   <name>Synology Note Station</name>
-  <developer_name>Synology</developer_name>
+  <developer id="com.synology">
+    <name>Synology</name>
+  </developer>
   <url type="homepage">https://www.synology.com</url>
   <summary>Powerful note-taking application for personal and professional use</summary>
   <description>
-    <p>Synology Note Station is a powerful note-taking application designed for personal and professional use. Organize your thoughts, ideas, and tasks efficiently with Note Station's intuitive interface and collaborative features.</p>
+    <p>Synology Note Station is a powerful note-taking application designed for personal and professional use.
+      Organize your thoughts, ideas, and tasks efficiently with Note Station's intuitive interface and collaborative features.</p>
   </description>
   <categories>
     <category>Office</category>
@@ -21,6 +24,9 @@
   </screenshots>
   <launchable type="desktop-id">com.synology.synology-note-station.desktop</launchable>
   <releases>
+    <release version="2.2.6-813" date="2026-09-27">
+      <url>https://www.synology.com/releaseNote/NoteStationClient</url>
+    </release>
     <release version="2.2.5-804" date="2025-04-15"/>
     <!-- Add other releases as necessary -->
   </releases>

@@ -1,7 +1,7 @@
 # copied/inspired from https://github.com/flathub/com.synology.SynologyDrive/blob/master/com.synology.SynologyDrive.yaml
 id: com.synology.synology-note-station
 runtime: org.freedesktop.Platform
-runtime-version: "24.08"
+runtime-version: "26.08"
 sdk: org.freedesktop.Sdk
 command: launch.sh
 finish-args:
@@ -14,6 +14,12 @@ finish-args:
 modules:
   - name: com.synology.synology-note-station
     buildsystem: simple
+    build-commands:
+      - install -D launch.sh /app/bin/launch.sh
+      - install -Dm644 ${FLATPAK_ID}.desktop -t /app/share/applications/
+      - install -Dm644 ${FLATPAK_ID}.metainfo.xml -t /app/share/metainfo/
+      - install -Dm644 ${FLATPAK_ID}.png -t /app/share/icons/hicolor/256x256/apps/
+      - install -D apply_extra -t /app/bin
     sources:
       - type: file
         path: launch.sh
@@ -22,21 +28,16 @@ modules:
       - type: file
         path: com.synology.synology-note-station.desktop
       - type: file
-        path: icons/com.synology.synology-note-station-256.png
+        path: icons/com.synology.synology-note-station.png
       - type: extra-data
         filename: synology-note-station.deb
         only-arches: [ x86_64 ]
-        url: "https://global.synologydownload.com/download/Utility/NoteStationClient/2.2.5-804/Ubuntu/x86_64/synology-note-station-client-2.2.5-804-linux-x64.deb"
-        sha256: 7157f334670de1a6fd8dbb5696739c305f9447febb39673fb206590ab6755550
-        size: 108605806
+        # Recived from: https://archive.synology.com/download/Utility/NoteStationClient
+        url: https://global.synologydownload.com/download/Utility/NoteStationClient/2.2.6-813/Ubuntu/x86_64/synology-note-station-client-2.2.6-813-linux-x64.deb
+        sha256: f4119d612facddcb783176f66c0c9f43e1b27c02edafa67b5c00970ebc1a6607
+        size: 108635794
       - type: script
         dest-filename: apply_extra
         commands:
           - bsdtar -Oxf synology-note-station.deb 'data.tar.*' | bsdtar -xf - --strip-components=3 --exclude='./usr'
           - rm synology-note-station.deb
-    build-commands:
-      - install -D launch.sh /app/bin/launch.sh
-      - install -Dm644 com.synology.synology-note-station.desktop -t /app/share/applications
-      - install -Dm644 com.synology.synology-note-station.metainfo.xml -t /app/share/metainfo
-      - install -Dm644 com.synology.synology-note-station-256.png /app/share/icons/hicolor/256x256/apps/com.synology.synology-note-station.png
-      - install -D apply_extra -t /app/bin
