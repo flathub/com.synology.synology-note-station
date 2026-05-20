@@ -1,7 +1,7 @@
 # copied/inspired from https://github.com/flathub/com.synology.SynologyDrive/blob/master/com.synology.SynologyDrive.yaml
 id: com.synology.synology-note-station
 runtime: org.freedesktop.Platform
-runtime-version: "24.08"
+runtime-version: "25.08"
 sdk: org.freedesktop.Sdk
 command: launch.sh
 finish-args:
